@@ -1,1 +1,1 @@
-var allApis = ['scan.php','wpscan.php','3','4'];
+var allApis = ['https://bomjesussupermercado.com/samiul/apiwp/wpscan.php'];
