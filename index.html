@@ -1,0 +1,202 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Wordpress Scanner</title>
+	<link rel="shortcut icon" href="./img/icon.png">
+	<meta property="og:image" content="./img/logo.png">
+    <link rel="stylesheet" type="text/css" href="./css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="Best online WordPress Scanner for detecting and reporting WordPress site. Developed by Samiul Alim.">
+</head>
+<body>
+<div class="toppart">
+    <div class="header">
+	    <button id="menu_btn"><div style="width: 17.5px;height: 20px;"><i class="fa-solid fa-bars" id="menu_btn_on"></i><i class="fa-solid fa-xmark" id="menu_btn_off"></i></div></button>
+		<div class="header_img"><img src="./img/wp.png" title="Wordpress Scanner"></div>
+	</div>
+	<div id="loading"><div class="bar"></div></div>
+</div>
+<div id="nev_menu">
+    <div class="card">
+        <div class="usercard">
+	        <div class="userpanel">
+                <span class="userid">Wordpress Scanner</span>
+	            <br><br><br>
+                <div id="iconmenu">
+				    <i class="glyphicon fa-light fa-house" onClick="loadHome()"><br><span class="subtextmenuicon">Home</span></i>
+                    <i class="glyphicon fa-brands fa-searchengin" onClick="loadScanMenu()"><br><span class="subtextmenuicon">Scan</span></i>
+                    <i class="glyphicon fa-brands fa-wordpress" onClick="loadWordPress()"><br><span class="subtextmenuicon">WordPress</span></i>                    
+					<i class="glyphicon fa-light fa-link" onClick="loadNonWordPress()"><br><span class="subtextmenuicon">NonWordPress</span></i>
+                    <i class="glyphicon fa-light fa-cloud-exclamation" onClick="loadInvalid()"><br><span class="subtextmenuicon">Invalid</span></i>  
+					<i class="glyphicon fa-light fa-wifi-exclamation" onClick="loadErrors()"><br><span class="subtextmenuicon">Errors</span></i> 
+				</div>
+            </div>
+        </div>
+    </div><br>
+	<div class="card">
+        <div class="usercard">
+	        <div class="userpanel">
+                <span class="userid">Samiul Alim</span>
+	            <br><br><br>
+                <div id="iconmenu">
+					<i onClick="Email()" class="glyphicon fa-light fa-at"><br><span class="subtextmenuicon">Email</span></i>
+                    <i onClick="Facebook()" class="glyphicon fa-brands fa-facebook"><br><span class="subtextmenuicon">Facebook</span></i>
+                    <i onClick="Telegram()" class="glyphicon fa-brands fa-telegram"><br><span class="subtextmenuicon">Telegram</span></i>
+                </div>
+            </div>
+        </div>
+    </div><br>
+	<div class="card">
+        <div class="usercard">
+	        <div class="userpanel">
+                <span class="userid">Team Ex</span>
+	            <br><br><br>
+                <div id="iconmenu">
+				 	<i onClick="Email()" class="glyphicon fa-brands fa-facebook-f"><br><span class="subtextmenuicon">Page</span></i>
+                    <i onClick="Facebook()" class="glyphicon fa-brands fa-facebook"><br><span class="subtextmenuicon">Group</span></i>
+                    <i onClick="Telegram()" class="glyphicon fa-brands fa-telegram"><br><span class="subtextmenuicon">Telegram</span></i>
+				</div>
+            </div>
+        </div>
+    </div>
+	<br><h3 style="margin: 0px 10px;text-align: center;color: #11dffe;">Developed by Samiul Alim</h2><br>
+	<p style="text-align: center;color: #11dffe;">Copyright © 2022</p>
+	<h4 style="text-align: center;color: #11dffe;">Team Ex</h4>
+</div>
+
+
+<div id="home">
+    <div class="box">
+        <h1 class="title color-02">Wordpress Scanner</h1>
+	    <p class="note"><i class="fa-light fa-octagon-check"></i><span>This is an online WordPress Scanner for detecting and reporting WordPress site.</span></p>
+        <p class="note"><i class="fa-light fa-octagon-check"></i><span>This site detect almost 90% acutestluy detecting and reporting WordPress site.</span></p>		
+        <p class="note"><i class="fa-light fa-octagon-check"></i><span><b>Scan : </b>Upload or write the site link in here. Then click "Scan Now" to start scanning.</span></p>
+        <p class="note"><i class="fa-light fa-octagon-check"></i><span><b>WordPress : </b>Wordpress site link will show here. Which link is 100% WordPress those shown here.</span></p>
+        <p class="note"><i class="fa-light fa-octagon-check"></i><span><b>NonWordPress : </b>NonWordPress site link will show here.  Which link is 90% NonWordPress those shown here.</span></p>
+		<p class="note"><i class="fa-light fa-octagon-check"></i><span><b>Invalid : </b>Invalid site link will show here. Which line has no link or invalid link those shown here.</span></p>
+        <p class="note"><i class="fa-light fa-octagon-check"></i><span><b>Errors : </b>Errors site link will show here. Which line can not scanned properly those shown here. This link could be WordPress or Not WordPress.</span></p>
+		<p class="note"><i class="fa-light fa-octagon-check"></i><span><b>Problem : </b>When you disconnect to internet or server got any error then Errors link show here.</span></p>
+		<p class="note"><i class="fa-light fa-octagon-check"></i><span><b>Note : </b>Wordpress site can found in errors.</b></span></p>
+    </div>
+	<p style="text-align: center;color: #11dffe;">Copyright © 2022</p>
+	<h4 style="text-align: center;color: #11dffe;">Team Ex</h4>
+</div>
+
+<div id="ScanMenu">
+	<div id="nonscan">
+		<div class="container">		
+			<textarea class="textarea" id="sites" placeholder="Write your site links here..."></textarea>
+		</div>
+
+		<div class="input">
+			<div class="icon"><i class="fa-light fa-folder-arrow-up"></i></div>
+			<div class="select">
+				<input type="file" class="upload_file" id="upload" accept="text/plain">
+			</div>
+		</div>
+
+		<div class="container_submit">	
+			<button type="submit" id="ScanNow" class="button">Scan Now</button>
+		</div>
+	</div>
+	<div id="scan" class="ini--bg ini--fg" style="--mode: 0; --ssum: 0; --used: 0; --perc: 0; --col0: #feb95a; --col1: #f2c8ee; --col2: #20bfa9; --col3: #ee786c">
+		<div class="wrap wrap--slides">
+			<div class="slide ini--bg ini--fg">
+				<div class="chart">
+					<div class="arc" id="errors" style="--cum: 0; --rel: 0; --col: #ee786c"></div>
+					<div class="arc" id="invalid" style="--cum: 0; --rel: 0; --col: #feb95a"></div>
+					<div class="arc" id="nonwordpress" style="--cum: 0; --rel: 0; --col: #f2c8ee"></div>
+					<div class="arc" id="wordpress" style="--cum: 0; --rel: 0; --col: #20bfa9"></div>
+				</div>
+				<div class="total" name="Total"></div>
+				<div class="used" name="Complete"></div>
+			</div>
+		</div>
+		<div class="wrap wrap--types">
+			<article class="tile ftyp ini--bg" id="WordPress" style="--col: #20bfa9">
+				<header><h3>WordPress</h3></header>
+				<div class="info">
+					<div class="info--flex">
+					<div class="info__num">0</div>
+					<div class="info__rel">0</div>
+					</div>
+					<meter class="sec--bg" max="100" value="0"></meter>
+				</div>
+			</article>
+			<article class="tile ftyp ini--bg" id="Non_WordPress" style="--col: #f2c8ee">
+				<header><h3>Non WordPress</h3></header>
+				<div class="info">
+					<div class="info--flex">
+					<div class="info__num">0</div>
+					<div class="info__rel">0</div>
+					</div>
+					<meter class="sec--bg" max="100" value="0"></meter>
+				</div>
+			</article>
+			<article class="tile ftyp ini--bg" id="Invalid" style="--col: #feb95a">
+				<header><h3>Invalid</h3></header>
+				<div class="info">
+					<div class="info--flex">
+					<div class="info__num">0</div>
+					<div class="info__rel">0</div>
+					</div>
+					<meter class="sec--bg" max="100" value="0"></meter>
+				</div>
+			</article>
+			<article class="tile ftyp ini--bg" id="Errors" style="--col: #ee786c">
+				<header><h3>Errors</h3></header>
+				<div class="info">
+					<div class="info--flex">
+					<div class="info__num">0</div>
+					<div class="info__rel">0</div>
+					</div>
+					<meter class="sec--bg" max="100" value="0"></meter>
+				</div>
+			</article>
+		</div>
+	</div>
+</div>
+
+<div id="result_WordPress">
+	<div class="container">		
+		<textarea class="textarea" readonly></textarea>
+	</div>
+	<div class="container_submit">	
+		<button type="submit" class="button">Copy WordPress Site</button>
+	</div>
+</div>
+
+<div id="result_NonWordPress">
+	<div class="container">		
+		<textarea class="textarea" readonly></textarea>
+	</div>
+	<div class="container_submit">	
+		<button type="submit" class="button">Copy NonWordPress Site</button>
+	</div>
+</div>
+
+<div id="result_Invalid">
+	<div class="container">		
+		<textarea class="textarea" readonly></textarea>
+	</div>
+	<div class="container_submit">	
+		<button type="submit" class="button">Copy Invalid Site</button>
+	</div>
+</div>
+
+<div id="result_Errors">
+	<div class="container">		
+		<textarea class="textarea" readonly></textarea>
+	</div>
+	<div class="container_submit">	
+		<button type="submit" class="button">Copy Errors Site</button>
+	</div>
+</div>
+<script src="./js/apis.js"></script>
+<script src="./js/wpscan.js"></script>
+</body>
+</html>
