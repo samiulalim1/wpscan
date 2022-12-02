@@ -1,1 +1,1 @@
-var allApis = ['https://bomjesussupermercado.com/samiul/apiwp/wpscan.php'];
+var allApis = ['https://lejardinvillas.vn/wpscan.php'];
